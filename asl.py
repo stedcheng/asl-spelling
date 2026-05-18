@@ -62,6 +62,7 @@ def load_sentences():
         sentences = gutenberg.sents() + brown.sents()
     except:
         nltk.download("punkt")
+        nltk.download("punkt_tab")
         nltk.download("gutenberg")
         nltk.download("brown")
         sentences = gutenberg.sents() + brown.sents()
