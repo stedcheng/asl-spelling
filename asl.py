@@ -1,9 +1,7 @@
 import streamlit as st
 
 # Utilities
-import os
 import string
-import requests
 import time
 import difflib
 from pprint import pprint
@@ -19,6 +17,15 @@ import matplotlib.animation as animation
 
 # Sentence selection
 import nltk
+from nltk.data import find 
+try:
+    find("corpora/gutenberg")
+except LookupError:
+    nltk.download("gutenberg")
+try:
+    find("corpora/brown")
+except LookupError:
+    nltk.download("brown")
 from nltk.corpus import gutenberg, brown
 import random
 
