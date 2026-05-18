@@ -17,15 +17,6 @@ import matplotlib.animation as animation
 
 # Sentence selection
 import nltk
-from nltk.data import find 
-try:
-    find("corpora/gutenberg")
-except LookupError:
-    nltk.download("gutenberg")
-try:
-    find("corpora/brown")
-except LookupError:
-    nltk.download("brown")
 from nltk.corpus import gutenberg, brown
 import random
 
@@ -66,7 +57,13 @@ def load_images():
 
 @st.cache_data
 def load_sentences():
-    sentences = gutenberg.sents() + brown.sents()
+    try:
+        sentences = gutenberg.sents() + brown.sents()
+    except:
+        nltk.download("punkt")
+        nltk.download("gutenberg")
+        nltk.download("brown")
+        sentences = gutenberg.sents() + brown.sents()
 
     clean_sentences = []
     for sentence in sentences:
