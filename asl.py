@@ -18,6 +18,7 @@ import matplotlib.animation as animation
 # Sentence selection
 import nltk
 from nltk.corpus import gutenberg, brown
+from nltk.tokenize import PunktTokenizer
 import random
 
 # Cache data
