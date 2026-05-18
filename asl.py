@@ -15,8 +15,6 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageDraw, ImageFont
 
 # Animation
-from IPython.display import display, HTML, clear_output
-import sys
 import matplotlib.animation as animation
 
 # Sentence selection
