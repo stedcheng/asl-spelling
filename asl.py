@@ -188,7 +188,7 @@ def save_animation(index, countdown_images, interval = 500, repetitions = 2):
 
     all_images = countdown_images + sentence_images
     all_durations = countdown_durations + sentence_durations
-    os.makedir("animations/")
+    os.makedirs("animations/")
     all_images[0].save(f"animations/animation_{index}.gif", save_all=True, append_images=all_images[1:], duration=all_durations, loop=1)
 
 @st.cache_data
