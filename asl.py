@@ -3,10 +3,10 @@
 import streamlit as st
 
 # Utilities
+import os
 import string
 import time
 import difflib
-from pprint import pprint
 import datetime
 from textwrap import dedent
 
@@ -288,6 +288,7 @@ def save_animation(index, countdown_arrays, interval = 500, repetitions = 2):
 
     all_arrays = list(countdown_arrays) + list(sentence_arrays)
     all_durations = countdown_durations + sentence_durations
+    os.makedirs("animations/", exist_ok = True)
     imageio.mimsave(f"animations/animation_{index}.gif", all_arrays, duration = all_durations, loop = 1)
 
 @st.cache_data(show_spinner = f"Loading current set of questions... (estimated time: {num_questions * 2} seconds)")
